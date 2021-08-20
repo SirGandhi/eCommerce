@@ -55,6 +55,10 @@ body {
   font-size: 1.5rem;
 }
 
+.new-card-text {
+  min-height: 200px;
+}
+
 .new-card-title::after {
   content: "";
   position: absolute;

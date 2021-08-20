@@ -5,7 +5,6 @@
         <h1>LOGIN</h1>
         <div class="links">
             <a href="index.php" class="active">Login</a>
-            <!--<a href="register.html">Register</a>-->
         </div>
         <form action="login" method="POST">
             @csrf
