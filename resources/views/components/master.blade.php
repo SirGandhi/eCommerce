@@ -1,3 +1,12 @@
+<?php 
+use App\Http\Controllers\ProductController;
+if(Session::has('user')){
+    $total = ProductController::cartItem();
+}else{
+    $total = 0;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +31,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
+                    <li>
+                        <form action="/search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                            <input type="search" name="query" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+                        </form>
+                    </li>
                     <li class="nav-item active position-relative">
                         <a class="nav-link px-0 font-weight-bold" href="/">Home</a>
                     </li>
@@ -29,17 +43,27 @@
                         <a class="nav-link px-0 font-weight-bold" href="/product">Products</a>
                     </li>
                     <li class="nav-item position-relative">
-                        <a class="nav-link px-0 font-weight-bold" href="https://codepen.io/LukeFarmer">Codepen</a>
-                    </li>
-                    <li class="nav-item position-relative">
-                        <a class="nav-link px-0 font-weight-bold" href="#">GitHub</a>
-                    </li>
-                    <li class="nav-item position-relative">
                         <a class="nav-link px-0 font-weight-bold" href="#">Contact</a>
-                    </li>
+                    </li>          
                     <li class="nav-item position-relative">
-                        <a class="nav-link px-0 font-weight-bold" href="login">Login</a>
+                        <a class="nav-link px-0 font-weight-bold" href="#">Cart ({{ $total }})</a>
                     </li>
+                    @if(Session::has('user'))
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ Session::get('user')['name']; }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <li class="nav-item position-relative">
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    @else
+                    <li class="nav-item position-relative">
+                        <a class="nav-link px-0 font-weight-bold" href="/login">Login</a>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </nav>

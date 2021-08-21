@@ -126,12 +126,18 @@ body {
 
 header {
   background: var(--clr-white);
+  border-bottom: 5px solid var(--clr-grey);
 }
 
 header::after {
   content: "";
   display: table;
   clear: both;
+}
+
+.form-control {
+  outline: none!important;
+  box-shadow: none!important;
 }
 
 .header-title {
@@ -177,7 +183,7 @@ nav li a::after {
   transition: width ease-in-out 250ms;
 }
 
-nav li a:hover::after {
+nav li a:hover::after:not(.dropdown-toggle) {
   width: 100%;
 }
 
@@ -382,5 +388,16 @@ footer {
     cursor: pointer;
     font-weight: bold;
     color: #ffffff;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-toggle::after {
+  width: 0;
+  height: 0;
+  margin: 0;
+  border: none;
 }
 
