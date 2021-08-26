@@ -126,7 +126,6 @@ body {
 
 header {
   background: var(--clr-white);
-  border-bottom: 5px solid var(--clr-grey);
 }
 
 header::after {
@@ -136,8 +135,8 @@ header::after {
 }
 
 .form-control {
-  outline: none!important;
-  box-shadow: none!important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .header-title {
@@ -183,7 +182,7 @@ nav li a::after {
   transition: width ease-in-out 250ms;
 }
 
-nav li a:hover::after:not(.dropdown-toggle) {
+nav li a:hover::after {
   width: 100%;
 }
 
@@ -261,6 +260,7 @@ footer {
   border: none;
   margin: 10px 0px;
   border: none;
+  border-radius: 0;
 }
 
 .form-block input:not(.submit-button),
@@ -322,82 +322,99 @@ footer {
 }
 
 .login {
-    width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
-    margin: 100px auto;
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
 }
 
 .login > h1 {
-    text-align: center;
-    color: #5b6574;
-    font-size: 24px;
-    padding: 20px 0 20px 0;
-    border-bottom: 1px solid #dee0e4;
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
 }
 
 .login > .links {
-    display: flex;
-    padding: 0 15px;
+  display: flex;
+  padding: 0 15px;
 }
 
 .login > .links > a {
-    color: #adb2ba;
-    text-decoration: none;
-    display: inline-flex;
-    padding: 0 10px 10px 10px;
-    font-weight: bold;
+  color: #adb2ba;
+  text-decoration: none;
+  display: inline-flex;
+  padding: 0 10px 10px 10px;
+  font-weight: bold;
 }
 
 .login > .links > a.active {
-    border-bottom: 3px solid #435165;
-    color: #435165;
+  border-bottom: 3px solid #435165;
+  color: #435165;
 }
 
 .login > form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 .login > form > label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 12%;
-    height: 50px;
-    background-color: var(--clr-accent);
-    color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  height: 50px;
+  background-color: var(--clr-accent);
+  color: #ffffff;
 }
 
-.login > form > input[type="password"], .login > form > input[type="text"], .login > form > input[type="email"] {
-    width: 80%;
-    height: 50px;
-    border: 1px solid #dee0e4;
-    margin-bottom: 20px;
-    padding: 0 15px;
+.login > form > input[type="password"],
+.login > form > input[type="text"],
+.login > form > input[type="email"] {
+  width: 80%;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
 }
 
 .login > form > input[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    background-color: var(--clr-accent);
-    border: 0;
-    cursor: pointer;
-    font-weight: bold;
-    color: #ffffff;
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: var(--clr-accent);
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
 }
 
-.dropdown-menu li {
-  margin: 0;
-}
-
-.dropdown-toggle::after {
+.dropdown-toggle::after,
+.dropdown-item::after {
   width: 0;
   height: 0;
   margin: 0;
   border: none;
 }
 
+.accent-background {
+  background-color: var(--clr-accent);
+}
+
+.navbar {
+  background-color: var(--clr-dark);
+}
+header,
+header .container {
+  background-color: var(--clr-dark);
+}
+
+.navbar input {
+  background-color: var(--clr-grey);
+  border: none;
+  padding: 10px;
+  border-radius: 0;
+}

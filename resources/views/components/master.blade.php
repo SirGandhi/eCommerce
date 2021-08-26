@@ -24,13 +24,13 @@ if(Session::has('user')){
 <body>
 <header>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#"><img src="{{url('/img/logo.svg')}}" alt="logo" class="img-fluid" /></a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/"><img src="{{url('/img/logo.svg')}}" alt="logo" class="img-fluid" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
                     <li>
                         <form action="/search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                             <input type="search" name="query" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
@@ -46,7 +46,7 @@ if(Session::has('user')){
                         <a class="nav-link px-0 font-weight-bold" href="#">Contact</a>
                     </li>          
                     <li class="nav-item position-relative">
-                        <a class="nav-link px-0 font-weight-bold" href="#">Cart ({{ $total }})</a>
+                        <a class="nav-link px-0 font-weight-bold" href="/cart">Cart ({{ $total }})</a>
                     </li>
                     @if(Session::has('user'))
                     <li class="nav-item dropdown">

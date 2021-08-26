@@ -8,15 +8,15 @@
                         <div class="row font-weight-bold">
                             <div class="col-md-6 col-12 pb-3">
                                 <label class="ml-1 mb-0">Name</label>
-                                <input type="text" name="name" placeholder="Name..." required>
+                                <input class="form-control" type="text" name="name" placeholder="Name..." required>
                             </div>
                             <div class="col-md-6 col-12 pb-3">
                                 <label class="ml-1 mb-0">Number</label>
-                                <input type="text" name="number" placeholder="Number..." required>
+                                <input class="form-control" type="text" name="number" placeholder="Number..." required>
                             </div>
                         </div>
                         <label class="ml-1 mb-0 font-weight-bold">Message</label>
-                        <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message..." required></textarea>
                         <input type="submit" class="submit-button my-3 slide-left font-weight-bold" value="SEND" >
                     </form>
                 </div>
